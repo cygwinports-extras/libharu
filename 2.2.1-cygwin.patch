@@ -1,0 +1,23 @@
+--- origsrc/libharu-2.2.1/configure.in	2010-11-22 03:59:56.000000000 -0600
++++ src/libharu-2.2.1/configure.in	2011-10-17 18:16:45.990770300 -0500
+@@ -301,12 +301,6 @@ else
+ fi
+ dnl }}}
+ 
+-case "$host_alias" in
+-  *cygwin*[)]
+-    CFLAGS="$CFLAGS -mno-cygwin -DHPDF_DLL_MAKE_CDECL"
+-    ;;
+-esac
+-
+ if test "$GCC" = yes ; then
+   AC_MSG_CHECKING([whether GCC supports -fexceptions])
+   echo 'void somefunc() { };' > conftest.c
+--- origsrc/libharu-2.2.1/src/Makefile.am	2010-11-22 03:57:27.000000000 -0600
++++ src/libharu-2.2.1/src/Makefile.am	2011-10-17 18:17:07.596807900 -0500
+@@ -18,4 +18,4 @@ libhpdf_la_SOURCES =	hpdf_annotation.c h
+ 
+ INCLUDES = -I$(top_srcdir)/include 
+ libhpdf_la_LIBADD = @LTLIBOBJS@
+-libhpdf_la_LDFLAGS = -release @VERSION@
++libhpdf_la_LDFLAGS = -release @VERSION@ -no-undefined

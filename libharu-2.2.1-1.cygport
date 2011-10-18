@@ -1,0 +1,8 @@
+DESCRIPTION="PDF generation library"
+HOMEPAGE="http://libharu.org/"
+SRC_URI="http://libharu.org/files/${P}.tar.bz2"
+PATCH_URI="2.2.1-cygwin.patch"
+
+PKG_NAMES="libhpdf${PV} libhpdf-devel"
+declare libhpdf${PV//./_}_CONTENTS="usr/bin/cyghpdf-${PV//./-}.dll"
+libhpdf_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/"

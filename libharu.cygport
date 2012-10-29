@@ -1,0 +1,20 @@
+NAME="libharu"
+VERSION=2.2.1
+RELEASE=2
+CATEGORY="Graphics"
+SUMMARY="PDF generation library"
+DESCRIPTION="libHaru is a free, cross platform, open source library for
+generating PDF files. At this moment libHaru does not support reading and
+editing existing PDF files and it's unlikely this support will ever appear."
+HOMEPAGE="http://libharu.org/"
+SRC_URI="http://libharu.org/files/${P}.tar.bz2"
+PATCH_URI="2.2.1-cygwin.patch
+           http://pkgs.fedoraproject.org/cgit/libharu.git/plain/libharu-2.2.1-png15.patch"
+
+PKG_NAMES="libhpdf2.2.1 libhpdf-devel"
+libhpdf2_2_1_SUMMARY="${SUMMARY} (runtime)"
+libhpdf2_2_1_CONTENTS="usr/bin/cyghpdf-2-2-1.dll"
+libhpdf_devel_SUMMARY="${SUMMARY} (development)"
+libhpdf_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/"
+
+KEEP_LA_FILES="none"

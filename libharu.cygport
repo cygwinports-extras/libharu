@@ -1,7 +1,7 @@
 NAME="libharu"
 VERSION=2.2.1
 RELEASE=2
-CATEGORY="Graphics"
+CATEGORY="Libs"
 SUMMARY="PDF generation library"
 DESCRIPTION="libHaru is a free, cross platform, open source library for
 generating PDF files. At this moment libHaru does not support reading and
@@ -16,5 +16,7 @@ libhpdf2_2_1_SUMMARY="${SUMMARY} (runtime)"
 libhpdf2_2_1_CONTENTS="usr/bin/cyghpdf-2-2-1.dll"
 libhpdf_devel_SUMMARY="${SUMMARY} (development)"
 libhpdf_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/"
+
+MAKEOPTS+=" INSTALL_STRIP_FLAG= "
 
 KEEP_LA_FILES="none"
